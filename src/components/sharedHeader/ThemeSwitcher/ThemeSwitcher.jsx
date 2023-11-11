@@ -4,12 +4,12 @@ import Switch from "react-switch";
 
 export const ThemeSwitcher = () => {
   
-  const { toogleChangeTheme } = useTheme();
+  const { toggleChangeTheme } = useTheme();
   const [isDarkTheme, setIsDarkTheme] = useState(localStorage.getItem('app-theme') === 'dark' ? true : false);
 
   const handleChangeTheme = nextChecked => {
     setIsDarkTheme(nextChecked);
-    toogleChangeTheme(nextChecked);
+    toggleChangeTheme(nextChecked);
   };
 
   return (

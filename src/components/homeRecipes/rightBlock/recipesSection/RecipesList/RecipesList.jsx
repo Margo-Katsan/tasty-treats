@@ -38,6 +38,7 @@ export const RecipesList = () => {
     }
     else if (size.width < 768) {
       setPerPage(6)
+      
     }
   }, [dispatch, size.width]);
 
