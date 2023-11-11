@@ -5,7 +5,6 @@ export const FavoritesMainSection = () => {
   
   return (
     <section>
-      <h2></h2>
       <FavoritesFilter />
       <FavoritesList />
       <FavoritesPagination />

@@ -1,10 +1,10 @@
 
 
 import { NavLink } from "react-router-dom";
-import svg from "images/sprite.svg";
+
 import { ThemeSwitcher } from "components/sharedHeader/ThemeSwitcher/ThemeSwitcher";
 import css from "./MobileMenu.module.css"
-import { useEffect } from "react";
+
 import { Transition } from 'react-transition-group';
 
 

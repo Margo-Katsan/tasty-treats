@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from 'react-redux';
 import ReactModal from 'react-modal';
 import { useWindowSize } from "@uidotdev/usehooks";
 
@@ -10,13 +9,13 @@ import { AddToFavoritesBtn } from "../AddToFavoritesBtn/AddToFavoritesBtn";
 import { GiveARatingBtn } from "../GiveARatingBtn/GiveARatingBtn";
 import { Tags } from "../Tags/Tags";
 import { fetchRecipeById } from "api";
-import svg from 'images/sprite.svg'
+
 import css from './RecipeDetails.module.css'
 
 ReactModal.setAppElement('#modal-root');
 export const RecipesDetails = ({ recipeId }) => {
   const windowWidth = useWindowSize().width;
-  const dispatch = useDispatch();
+
   const [title, setTitle] = useState('');
   const [video, setVideo] = useState('');
   const [tags, setTags] = useState([]);

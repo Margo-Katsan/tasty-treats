@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import svg from 'images/sprite.svg';
+
 import { NavHeader } from "components/sharedHeader/NavHeader/NavHeader";
 import { ThemeSwitcher } from "components/sharedHeader/ThemeSwitcher/ThemeSwitcher";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";

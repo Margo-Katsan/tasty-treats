@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { setItemOffset } from 'redux/favoritesSlice';
 import { selectFavorites, selectTotalFavorites, selectPerPage } from "redux/selectors";
 import { Pagination } from 'components/sharedPagination/Pagination/Pagination'
-import css from './FavoritesPagination.module.css'
 
 export const FavoritesPagination = () => {
   const dispatch = useDispatch();

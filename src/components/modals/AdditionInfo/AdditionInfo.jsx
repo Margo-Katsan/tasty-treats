@@ -1,6 +1,4 @@
 import { RatingStars } from "components/homeRecipes/rightBlock/recipesSection/RatingStars/RatingStars";
-import Rating from '@mui/material/Rating';
-import svg from "images/sprite.svg";
 import { Tags } from "../Tags/Tags";
 import css from './AdditionInfo.module.css';
 
