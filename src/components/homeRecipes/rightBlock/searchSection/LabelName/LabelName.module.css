@@ -1,0 +1,9 @@
+.title {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  line-height: 1.29;
+
+  color: var(--filter-text-color);
+}

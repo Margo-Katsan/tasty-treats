@@ -1,0 +1,35 @@
+.container {
+  margin-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.ratingWrapper {
+  display: flex;
+  gap: 8px;
+}
+.ratingNumber,
+.time {
+  font-size: 14px;
+  line-height: 1.29;
+
+  color: var(--secondary-rating-and-others-text-color);
+}
+.noFilled {
+  fill: var(--secondary-elements-color);
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wrapper {
+    gap: 8px;
+  }
+}

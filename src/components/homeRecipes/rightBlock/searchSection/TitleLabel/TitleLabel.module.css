@@ -1,0 +1,42 @@
+.label {
+  width: 287px;
+}
+
+.wrapper {
+  display: block;
+  position: relative;
+}
+.input {
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid var(--filter-border-color);
+  background-color: transparent;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 18px;
+  padding-left: 48px;
+}
+.input::placeholder {
+  color: var(--filter-text-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 18px;
+  fill: var(--filter-text-color);
+}
+@media screen and (min-width: 768px) {
+  .label {
+    width: 278px;
+  }
+  .input {
+    width: 0;
+    min-width: 212px;
+  }
+}
+@media screen and (min-width: 1200px) {
+}

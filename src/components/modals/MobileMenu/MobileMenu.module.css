@@ -1,0 +1,17 @@
+.modal {
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  position: absolute;
+  right: -300px; /* Начальная позиция справа за экраном */
+  transition: right 0.3s ease-in-out;
+}
+
+.modal-entering,
+.modal-exiting {
+  right: 0;
+}
+
+.modal-entered {
+  right: 0; /* Конечная позиция справа на экране */
+}

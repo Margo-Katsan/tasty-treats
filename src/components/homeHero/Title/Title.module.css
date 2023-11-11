@@ -1,0 +1,19 @@
+.title {
+  margin-bottom: 14px;
+
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.part {
+  color: var(--accent-color);
+  font-style: italic;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    margin-bottom: 16px;
+    font-size: 36px;
+  }
+}

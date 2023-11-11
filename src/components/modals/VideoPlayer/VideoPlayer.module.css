@@ -1,0 +1,16 @@
+.player {
+  margin-bottom: 20px;
+}
+.player > div {
+  border-radius: 8px;
+  background: linear-gradient(
+    0deg,
+    rgba(5, 5, 5, 0.4) 0%,
+    rgba(5, 5, 5, 0.4) 100%
+  );
+}
+@media screen and (min-width: 768px) {
+  .player {
+    margin-bottom: 16px;
+  }
+}

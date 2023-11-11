@@ -1,0 +1,42 @@
+.content {
+  width: 295px;
+  padding: 40px 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title {
+  margin-bottom: 14px;
+
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.instructions {
+  margin-bottom: 40px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+
+  color: var(--priority-desc-text-color);
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    min-width: 531px;
+  }
+  .content {
+    width: 467px;
+    padding: 32px;
+  }
+  .title {
+    margin-bottom: 16px;
+
+    line-height: 1.2;
+  }
+  .close {
+    top: 16px;
+    right: 16px;
+  }
+}

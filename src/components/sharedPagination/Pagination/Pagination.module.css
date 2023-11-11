@@ -1,0 +1,91 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.pagination {
+  height: 40px;
+  display: flex;
+  margin-right: 4px;
+}
+.page {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid rgba(5, 5, 5, 0.3);
+  border-radius: 50px;
+}
+
+.numberPage:not(:last-child) {
+  margin-right: 8px;
+}
+.breakPage {
+  margin-right: 14px;
+}
+.pageLink {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.active {
+  border-color: rgba(155, 181, 55, 1);
+  background-color: rgba(155, 181, 55, 1);
+}
+
+.previous {
+  margin-right: 14px;
+}
+.next,
+.previous {
+  border-color: rgba(155, 181, 55, 1);
+  background-color: rgba(155, 181, 55, 1);
+}
+.firstPage,
+.lastPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: rgba(155, 181, 55, 1);
+  background-color: rgba(155, 181, 55, 1);
+}
+.disabled {
+  border-color: rgba(5, 5, 5, 1);
+  background-color: rgba(5, 5, 5, 1);
+}
+
+.firstPage {
+  margin-right: 4px;
+}
+@media screen and (width < 768px) {
+  .currentPageNotZero + li {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pagination {
+    margin-right: 8px;
+  }
+  .previous {
+    margin-right: 24px;
+  }
+  .numberPage:not(:last-child) {
+    margin-right: 10px;
+  }
+  .breakPage {
+    margin-right: 24px;
+  }
+  .firstPage {
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,12 @@
+.form {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 24px;
+}
+.slider {
+  margin: 0;
+}
+.slider > div {
+  display: flex;
+  right: 0;
+}

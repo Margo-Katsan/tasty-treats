@@ -1,0 +1,33 @@
+.header {
+  padding-top: 25px;
+  padding-bottom: 85px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.72px;
+}
+.logo span {
+  color: var(--accent-color);
+}
+.cart {
+  color: var(--priority-elements-color);
+}
+.cartBtn {
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
+  background-color: transparent;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}

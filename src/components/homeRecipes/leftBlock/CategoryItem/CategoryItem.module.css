@@ -1,0 +1,12 @@
+.btn {
+  padding: 0;
+  border: 0;
+
+  line-height: 1.25;
+
+  color: var(--filter-option-text-color);
+  background-color: transparent;
+}
+.selected {
+  color: var(--accent-color);
+}

@@ -1,0 +1,14 @@
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  margin-left: auto;
+
+  font-size: 12px;
+  line-height: 1.3;
+
+  color: var(--filter-text-color);
+  background-color: transparent;
+}

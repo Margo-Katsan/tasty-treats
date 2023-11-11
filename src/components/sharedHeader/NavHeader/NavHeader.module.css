@@ -1,0 +1,20 @@
+.nav {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+  .navList {
+    display: flex;
+    gap: 16px;
+  }
+  .link {
+    font-size: 12px;
+    font-weight: 400;
+    &:global.active {
+      color: var(--accent-color);
+    }
+  }
+}

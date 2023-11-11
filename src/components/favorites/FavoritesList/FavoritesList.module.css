@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+@media screen and (min-width: 768px) {
+  .favorite {
+    width: calc((100% - 16px * 2) / 3);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .favorite {
+    width: calc((100% - 16px * 3) / 4);
+  }
+}

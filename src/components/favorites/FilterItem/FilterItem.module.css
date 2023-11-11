@@ -1,0 +1,30 @@
+.label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  height: 46px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.input:checked + .label {
+  background-color: #9bb537;
+  border-color: #9bb537;
+}
+.input:checked + .label .title {
+  color: aliceblue;
+}
+.title {
+  color: rgba(5, 5, 5, 0.3);
+
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+}
+.content {
+  width: fit-content;
+}

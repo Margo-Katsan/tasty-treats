@@ -1,0 +1,34 @@
+.mainWrapper,
+.leftBlock,
+.rightBlock {
+  display: flex;
+  flex-direction: column;
+}
+.leftBlock {
+  padding-bottom: 40px;
+}
+
+.rightBlock {
+  padding-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .mainWrapper {
+    flex-direction: row;
+    column-gap: 32px;
+  }
+  .leftBlock {
+    row-gap: 64px;
+    padding-top: 22px;
+  }
+
+  .rightBlock {
+    padding-bottom: 64px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .mainWrapper {
+    column-gap: 64px;
+  }
+}
