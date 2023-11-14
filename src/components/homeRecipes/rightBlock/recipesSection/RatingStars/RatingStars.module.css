@@ -7,7 +7,7 @@
   justify-content: center;
 }
 .noFilled {
-  fill: var(--rating-color-LT-uncheck);
+  fill: rgba(248, 248, 248, 0.1);
 }
 .filled {
   fill: var(--rating-color);

@@ -42,5 +42,11 @@ export const selectFavoritesCategories = createSelector(
     return categoriesWithoutDublicates;
   }
 )
-
+export const selectShowPagination = createSelector(
+  selectPerPage,
+  selectTotalFavorites,
+  (perPage, totalFavorites) => {
+    return perPage >= totalFavorites ? false : true;
+  }
+ )
 

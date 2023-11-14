@@ -4,17 +4,22 @@
   background-size: cover;
   height: 516px;
   margin-bottom: 40px;
+  border-radius: 15px;
+  margin-top: 45px;
 }
 @media screen and (min-width: 768px) {
   .hero {
     background-image: url(../../../images/favorites/hero-tablet.jpg);
     height: 356px;
+    margin-top: 50px;
+    margin-bottom: 24px;
   }
 }
 @media screen and (min-width: 1200px) {
   .hero {
     background-image: url(../../../images/favorites/hero-desktop.jpg);
     height: 356px;
+    margin-top: 40px;
   }
 }
 @media screen and (min-device-pixel-radio: 2) and (max-width: 767px),

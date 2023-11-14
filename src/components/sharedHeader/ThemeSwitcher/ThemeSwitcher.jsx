@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useTheme } from "hooks/useTheme"
 import Switch from "react-switch";
+import css from "./ThemeSwitcher.module.css"
 
-export const ThemeSwitcher = () => {
+export const ThemeSwitcher = ({mobileThemeSwitcher}) => {
   
   const { toggleChangeTheme } = useTheme();
   const [isDarkTheme, setIsDarkTheme] = useState(localStorage.getItem('app-theme') === 'dark' ? true : false);
@@ -13,7 +14,7 @@ export const ThemeSwitcher = () => {
   };
 
   return (
-    <div className="themeSwitcher">
+    <div className={`${css.themeSwitcher} ${css[mobileThemeSwitcher]}`}>
       <Switch
         onChange={handleChangeTheme}
         checked={isDarkTheme}
@@ -31,6 +32,14 @@ export const ThemeSwitcher = () => {
         }}
       ></div>}
         checkedIcon={false}
+        checkedHandleIcon={<div
+          style={{
+          width: "100%",
+            height: "100%",
+          borderRadius: "50%",
+          boxShadow: "4px 4px 15px 0px rgba(243, 243, 243, 0.25)"
+        }}
+      ></div>}
         activeBoxShadow="4px 4px 15px 0px rgba(243, 243, 243, 0.25)"
         offColor="#CECDCD"
         onColor="#9BB537"

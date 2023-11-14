@@ -1,4 +1,3 @@
-
 import { Formik, Field, Form, ErrorMessage } from 'formik';
  import * as Yup from 'yup';
 import { addOrder } from 'api';
@@ -34,7 +33,7 @@ export const OrderNow = () => {
         <Form className={css.form}>
           <div className={css.wrapper}>
             <label className={css.label}>
-            <span className={css.title}>Name</span>
+            <span className={css.title}>Name<span className={css.star}>&nbsp;*</span></span>
             <Field
               className={css.input}
               type="text"
@@ -46,28 +45,28 @@ export const OrderNow = () => {
             <ErrorMessage className={css.error} name="name" component="p"/>
           </label>
           <label className={css.label}>
-            <span className={css.title}>Phone number</span>
+            <span className={css.title}>Phone number<span className={css.star}>&nbsp;*</span></span>
             <Field
               className={css.input}
               type="tel"
               name="phone"
-              pattern="\+[0-9]{12}"
-              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              pattern="\+[0-9]{10,15}"
+              title="Phone number must start with a plus sign and have 10 to 15 digits. For example, +123456789012"
               required
             />
-            <ErrorMessage className={css.error} name="name" component="p"/>
+            <ErrorMessage className={css.error} name="phone" component="p"/>
           </label>
           <label className={css.label}>
-            <span className={css.title}>Email</span>
+            <span className={css.title}>Email<span className={css.star}>&nbsp;*</span></span>
             <Field
               className={css.input}
               type="email"
               name="email"
               pattern="/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/"
-              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              title="Please enter a valid email address."
               required
             />
-            <ErrorMessage className={css.error} name="name" component="p"/>
+            <ErrorMessage className={css.error} name="email" component="p"/>
           </label><label className={css.label}>
             <span className={css.title}>Comment</span>
             <Field
@@ -75,9 +74,7 @@ export const OrderNow = () => {
               as="textarea"
               type="text"
               name="comment"
-              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             />
-            <ErrorMessage className={css.error} name="name" component="p"/>
           </label>
           </div>
           

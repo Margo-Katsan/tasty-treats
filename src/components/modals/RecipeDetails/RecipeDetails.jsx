@@ -13,7 +13,7 @@ import { fetchRecipeById } from "api";
 import css from './RecipeDetails.module.css'
 
 ReactModal.setAppElement('#modal-root');
-export const RecipesDetails = ({ recipeId }) => {
+export const RecipesDetails = ({ recipeId, onToggleFavorites, recipeData, isFavorite }) => {
   const windowWidth = useWindowSize().width;
 
   const [title, setTitle] = useState('');
@@ -44,8 +44,7 @@ export const RecipesDetails = ({ recipeId }) => {
   
 
   return (
-    <div>
-      
+ 
       <div className={css.content}>
         {windowWidth >= 786 && (
           <h1 className={css.title}>{title}</h1>
@@ -61,12 +60,15 @@ export const RecipesDetails = ({ recipeId }) => {
           <Tags tags={tags}/>
         )}
 
-        <p className={css.instructions}>{instructions}</p>
-        <AddToFavoritesBtn />
+      <p className={css.instructions}>{instructions}</p>
+      <div className={css.buttons}>
+        <AddToFavoritesBtn onToggleFavorites={onToggleFavorites} recipeData={recipeData} isFavorite={isFavorite} />
         <GiveARatingBtn />
+      </div>
+      
         
       </div>
-    </div>
+
       
 
   );

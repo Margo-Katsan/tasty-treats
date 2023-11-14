@@ -1,5 +1,5 @@
 .label {
-  width: 287px;
+  width: 100%;
 }
 
 .wrapper {
@@ -15,12 +15,22 @@
   padding-bottom: 14px;
   padding-right: 18px;
   padding-left: 48px;
+  color: var(--filter-text-color);
+  transition: border-color var(--transition-dur-and-func);
 }
 .input::placeholder {
   color: var(--filter-text-color);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 18px;
+  background-color: transparent;
+}
+.input:focus {
+  outline: none;
+  border-color: var(--filter-text-color);
+}
+.input:focus + .icon {
+  fill: var(--accent-color);
 }
 .icon {
   position: absolute;
@@ -28,14 +38,15 @@
   transform: translateY(-50%);
   left: 18px;
   fill: var(--filter-text-color);
+  transition: fill var(--transition-dur-and-func);
 }
+
 @media screen and (min-width: 768px) {
   .label {
     width: 278px;
   }
-  .input {
-    width: 0;
-    min-width: 212px;
+  .input::placeholder {
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 1200px) {

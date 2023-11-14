@@ -5,13 +5,10 @@ import { selectRecipes } from 'redux/selectors';
 import { fetchRecipes } from 'redux/operations';
 import { RecipeItem } from '../RecipeItem/RecipeItem';
 import { useWindowSize } from "@uidotdev/usehooks";
-import { Modal } from "components/modals/Modal/Modal"
-import { RecipesDetails } from "components/modals/RecipeDetails/RecipeDetails";
-import { useModal } from 'hooks/useModal';
 import css from './ResipesList.module.css';
 
 export const RecipesList = () => {
-  const size = useWindowSize();
+  const windowWidth = useWindowSize().width;
   const dispatch = useDispatch();
   const [filtersSearchParams] = useSearchParams();
 
@@ -22,32 +19,34 @@ export const RecipesList = () => {
   
   const { page, title, category, area, ingredient, time } = params;
 
+  const initialPerPage = () => {
+    if (windowWidth >= 1200) { 
+      return 9;
+    }
+    else if (windowWidth >= 768) {
+      return 8;
+    }
+    else if (windowWidth < 768) {
+      return 6;  
+    }
+  }
   
-  const [perPage, setPerPage] = useState(6);
+  const [perPage, setPerPage] = useState(initialPerPage());
   const recipes = useSelector(selectRecipes);
   
 
-  const { showModal, handleOpenModal, handleCloseModal, searchParams, openModal } = useModal();
-
   useEffect(() => {
-    if (size.width >= 1200) { 
+    if (windowWidth >= 1200) { 
       setPerPage(9);
     }
-    else if (size.width >= 768) {
+    else if (windowWidth >= 768) {
       setPerPage(8);
     }
-    else if (size.width < 768) {
-      setPerPage(6)
-      
+    else if (windowWidth < 768) {
+      setPerPage(6)  
     }
-  }, [dispatch, size.width]);
+  }, [windowWidth]);
 
-  useEffect(() => {
-    if (searchParams.get('id') !== null && !showModal) {
-      openModal();
-    }
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   useEffect(() => {
     const paramsForFetch = {
@@ -67,11 +66,8 @@ export const RecipesList = () => {
   return (
     <>
       <ul className={css.list}>
-        {recipes.map(recipe => <RecipeItem recipeData={recipe} onOpen={handleOpenModal} /> )}
+        {recipes.map(recipe => <RecipeItem recipeData={recipe} /> )}
       </ul>
-      <Modal showModal={showModal} onClose={handleCloseModal}>
-        <RecipesDetails recipeId={searchParams.get('id')} />
-      </Modal>
     </>
   )
 }

@@ -1,5 +1,5 @@
-.wrapper {
-  width: 335px;
+.hero {
+  padding-top: 85px;
 }
 .desc {
   margin-bottom: 28px;
@@ -9,14 +9,25 @@
   line-height: 1.29;
 }
 @media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 90px;
+  }
   .wrapper {
     width: 446px;
   }
 }
 @media screen and (min-width: 1200px) {
+  .hero {
+    padding-top: 95px;
+  }
   .container {
     display: flex;
     flex-wrap: nowrap;
+  }
+  .mainWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100vw;
   }
   .wrapper {
     margin-right: 32px;
@@ -25,5 +36,10 @@
     width: 408px;
     font-size: 16px;
     line-height: 1.5;
+  }
+}
+@media screen and (min-width: 1350px) {
+  .mainWrapper {
+    width: 1350px;
   }
 }

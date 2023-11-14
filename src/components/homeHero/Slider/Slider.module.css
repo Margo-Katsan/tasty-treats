@@ -1,5 +1,5 @@
 .slider {
-  width: 350px;
+  width: 100vw;
   height: 302px;
   margin-bottom: 80px;
 }
@@ -8,10 +8,24 @@
   width: fit-content;
   height: fit-content;
 }
-
+@media screen and (max-width: 374px) {
+  .slider {
+    width: 350px;
+  }
+}
+@media screen and (min-width: 497px) and (max-width: 767px) {
+  .slider {
+    width: 497px;
+  }
+}
 @media screen and (min-width: 768px) {
   .slider {
-    width: 800px;
+    width: 100vw;
     height: 466px;
+  }
+}
+@media screen and (min-width: 871px) and (max-width: 1199px) {
+  .slider {
+    width: 871px;
   }
 }

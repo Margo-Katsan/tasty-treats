@@ -5,20 +5,19 @@ import { Select } from "../Select/Select";
 import { LabelName } from "../LabelName/LabelName";
 import css from "./IngredientsLabel.module.css"
 
-export const IngredientsLabel = ({onReset}) => {
+export const IngredientsLabel = ({onReset, optionStyles}) => {
   const { updatingSearchParams } = useExistingSearchParams();
   const [ingredients, setIngredients] = useState([]);
-  const defaultOption = { value: '', label: 'Product' };
 
   useEffect(() => {
     async function fetchingIngredients() {
       const fetchedIngredients = await fetchIngredients();
       const options = fetchedIngredients.map(ingredient => {
-        return { value: ingredient._id, label: ingredient.name, className: `${css.option}` }})
+        return { value: ingredient._id, label: ingredient.name, className: optionStyles }})
       setIngredients(options);
     }
     fetchingIngredients();
-  }, [])
+  }, [optionStyles])
 
   const handleSelectedOption = evt => {
     updatingSearchParams('ingredient', evt.value)
@@ -31,7 +30,6 @@ export const IngredientsLabel = ({onReset}) => {
       <Select
         options={ingredients}
         placeholder="Product"
-        defaultOption={defaultOption}
         onSelect={handleSelectedOption}
         onReset={onReset}
         filterToReset="ingredient"

@@ -1,8 +1,6 @@
 .content {
-  width: 295px;
+  width: 100%;
   padding: 40px 20px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .title {
   margin-bottom: 14px;
@@ -21,13 +19,12 @@
 
   color: var(--priority-desc-text-color);
 }
-
+.buttons {
+  display: flex;
+  align-items: center;
+}
 @media screen and (min-width: 768px) {
-  .modal {
-    min-width: 531px;
-  }
   .content {
-    width: 467px;
     padding: 32px;
   }
   .title {

@@ -7,7 +7,7 @@ export const RatingStars = ({ rating, fillNoFilled = css.noFilled }) => {
     <>
 
         <Rating
-          defaultValue={rating}
+          value={rating}
           max={5}
           precision={1}
           readOnly

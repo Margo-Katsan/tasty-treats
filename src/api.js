@@ -38,26 +38,21 @@ export const addOrder = async data => {
       if (resp.status !== 201) {
         throw new Error();
       }
-      console.log('Your order is accepted', 'Everything is fine');
+      return resp.status;
     } catch (error) {
-      console.log('Something went wrong. Try later...', 'Sorry');
+      throw error;
     }
   }
 
-export const patchRate = async (recipeId, data) => {
+export const patchRating = async (recipeId, data) => {
   try {
     const resp = await axios.patch(`recipes/${recipeId}/rating`, data);
-    console.log(resp);
     if (resp.status !== 200) {
       throw new Error();
     }
-    console.log('Rating updated', 'Thanks');
+    return resp.status;
     } catch (error) {
-      if (error.request.status !== 409) {
-        console.log('Something went wrong. Try later...', 'Sorry')
-
-      }
-      console.log('This letter already exists.', 'Sorry');
+    throw error;
 
     }
 }

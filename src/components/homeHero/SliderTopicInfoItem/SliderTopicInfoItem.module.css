@@ -9,6 +9,7 @@
 }
 .topicImgPizza {
   width: 150px;
+  height: 150px;
 }
 
 .topicInfo {
@@ -78,6 +79,7 @@
   }
   .topicImgPizza {
     width: 262px;
+    height: 262px;
   }
   .topicDesc {
     margin-bottom: 8px;

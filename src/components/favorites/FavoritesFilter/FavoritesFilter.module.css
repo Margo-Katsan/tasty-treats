@@ -10,3 +10,8 @@
   display: flex;
   right: 0;
 }
+@media screen and (min-width: 768px) {
+  .from {
+    margin-bottom: 32px;
+  }
+}

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const favoritesSlice = createSlice({
   name: "favorites",
@@ -8,7 +8,7 @@ const favoritesSlice = createSlice({
     items: [],
     category: '',
     totalFavorites: 0,
-    perPage: 9,
+    perPage: window.innerWidth < 768 ? 9 : 12,
     itemOffset: 0,
     isLoading: false,
     error: null,
@@ -29,6 +29,15 @@ const favoritesSlice = createSlice({
     },
     setFavoritesCategory(state, action) {
       state.category = action.payload
+      if (action.payload !== '') {
+        state.totalFavorites = state.items.filter(favorite => action.payload === favorite.category).length;
+      }
+      else {
+        state.totalFavorites = state.items.length;
+      }
+    },
+    setPerPage(state, action) {
+      state.perPage = action.payload
     }
   },
 });
@@ -38,5 +47,5 @@ const persistConfig = {
   storage,
 }
 
-export const { toogleFavorites, setItemOffset, setFavoritesCategory } = favoritesSlice.actions;
+export const { toogleFavorites, setItemOffset, setFavoritesCategory, setPerPage, setTotalfavorites } = favoritesSlice.actions;
 export const favoritesReducer = persistReducer(persistConfig, favoritesSlice.reducer);

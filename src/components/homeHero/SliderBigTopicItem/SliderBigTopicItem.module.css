@@ -1,5 +1,5 @@
 .wrapper {
-  width: 222px;
+  width: 200px;
   height: 280px;
   background-color: black;
   background-size: 500px 500px;
@@ -12,6 +12,4 @@
     height: 442px;
     background-size: 600px 600px;
   }
-}
-@media screen and (min-width: 1200px) {
 }

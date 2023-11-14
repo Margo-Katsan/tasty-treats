@@ -12,8 +12,10 @@
   z-index: 100;
 }
 .modal {
+  width: 335px;
   height: 100%;
   position: absolute;
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -43,4 +45,9 @@
 }
 .modal::-webkit-scrollbar {
   width: 0;
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 531px;
+  }
 }

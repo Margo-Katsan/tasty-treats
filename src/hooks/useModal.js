@@ -1,24 +1,40 @@
 import { useState } from 'react';
 import { useSearchParams } from "react-router-dom";
+import { useExistingSearchParams } from './useExistingSearchParams';
 
 export const useModal = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [showModal, setShowModal] = useState(false);
-  const openModal = () => setShowModal(true);
-  const closeModal = () => setShowModal(false);
-  const toogleModal = () => setShowModal(showModal => !showModal);
+  const { updatingSearchParams } = useExistingSearchParams();
+  const openModal = () => {
+    setShowModal(true);
+    document.documentElement.classList.add('ReactModal__Html--open');
+  }
+  const closeModal = () => {
+    setShowModal(false);
 
-  const handleCloseModal = () => {
-    setSearchParams({});
+      document.documentElement.classList.remove('ReactModal__Html--open');
+
+    
+  }
+  const closeRatingModal = () => {
     setShowModal(false);
   }
-  const handleOpenModal = id => {
-    const nextParams = id !== "" ? { id } : {};
 
-    setSearchParams(nextParams);
+  const handleCloseModal = () => {
+    updatingSearchParams('id', '')
+    setShowModal(false);
+    document.documentElement.classList.remove('ReactModal__Html--open');
+  }
+  const handleOpenModal = id => {
+    document.documentElement.classList.add('ReactModal__Html--open');
+    if (!searchParams.get('id')) {
+      updatingSearchParams('id', id)
+    }
+    
     setShowModal(true)
   }
   
 
-  return { showModal, handleOpenModal, handleCloseModal, searchParams, openModal, closeModal, toogleModal };
+  return { showModal, handleOpenModal, handleCloseModal, searchParams, openModal, closeModal, closeRatingModal };
 };

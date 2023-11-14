@@ -58,3 +58,11 @@
   background: var(--secondary-elements-color);
   border-radius: 12px;
 }
+@media screen and (min-width: 768px) {
+  .placeholder {
+    font-size: 16px;
+  }
+  .control {
+    height: 48px;
+  }
+}

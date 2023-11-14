@@ -1,0 +1,25 @@
+.btn {
+  width: 133px;
+  height: 41px;
+  border: 1px solid var(--accent-color);
+
+  font-size: 14px;
+
+  color: var(--priority-text-color);
+  background-color: transparent;
+  border-radius: 15px;
+}
+.modal {
+  width: 424px;
+  height: 254px;
+  padding: 32px;
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    width: 141px;
+    height: 45px;
+  }
+  .modal {
+    height: 254px;
+  }
+}

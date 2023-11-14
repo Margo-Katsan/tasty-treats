@@ -20,9 +20,7 @@ export const TitleLabel = () => {
     <label className={css.label}>
       <LabelName name={"Search"} />
       <span className={css.wrapper}>
-        <svg className={css.icon} width="18px" height="18px">
-        <use href={`${svg}#search`}></use>
-      </svg>
+        
       <input
         type="text"
           id="search-key"
@@ -30,7 +28,10 @@ export const TitleLabel = () => {
           name="search-key"
           placeholder="Enter text"
           onInput={handleInputText}
-      />
+        />
+        <svg className={`icon ${css.icon}`} width="18px" height="18px">
+        <use href={`${svg}#search`}></use>
+      </svg>
       </span>
     </label>
   )

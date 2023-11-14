@@ -9,6 +9,21 @@
   width: 100%;
   margin-bottom: 14px;
 }
+.option {
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 1.29;
+
+  color: var(--filter-option-text-color);
+  transition: background-color var(--transition-dur-and-func),
+    color var(--transition-dur-and-func);
+}
+.option:hover {
+  background-color: transparent;
+  color: var(--priority-text-color);
+}
+
 @media screen and (min-width: 768px) {
   .form {
     margin-bottom: 14px;

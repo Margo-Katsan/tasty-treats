@@ -11,7 +11,8 @@ export const FavoritesFilter = () => {
   const selectedCategory = useSelector(selectFavoritesCategory);
 
   const onValueChange = (event) => {
-    dispatch(setFavoritesCategory(event.target.value))
+    
+    dispatch(setFavoritesCategory(event.target.value));
   }
 
  return (

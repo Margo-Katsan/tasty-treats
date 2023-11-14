@@ -81,11 +81,13 @@ img {
   --background-recipe-gradient: 1deg, rgba(5, 5, 5, 0.6) 4.82%,
     rgba(5, 5, 5, 0) 108.72%;
   --background-overlay-color: rgba(0, 0, 0, 0.2);
+  --background-mobile-menu-color: #9bb537;
 
   --priority-elements-color: #050505;
   --secondary-elements-color: rgba(5, 5, 5, 0.1);
   --filter-border-color: rgba(5, 5, 5, 0.2);
   --topic-border-color: #050505;
+  --give-a-rating-no-filled-color: rgba(217, 217, 217, 1);
 
   --priority-text-color: #050505;
   --filter-text-color: rgba(5, 5, 5, 0.5);
@@ -96,6 +98,7 @@ img {
   --secondary-rating-and-others-text-color: rgba(5, 5, 5, 0.5);
   --topic-desc-text-color: rgba(248, 248, 248, 0.6);
   --topic-country-text-color: rgba(248, 248, 248, 0.2);
+  --active-link-mobile-menu-color: #050505;
 }
 
 [data-theme='dark'] {
@@ -103,11 +106,13 @@ img {
   --secondary-background-color: #050505;
   --background-recipe-gradient: 1deg, #050505 4.82%, rgba(5, 5, 5, 0) 108.72%;
   --background-overlay-color: rgba(255, 255, 255, 0.2);
+  --background-mobile-menu-color: #050505;
 
   --priority-elements-color: #fff;
   --secondary-elements-color: rgba(255, 255, 255, 0.1);
   --filter-border-color: rgba(255, 255, 255, 0.2);
   --topic-border-color: rgba(155, 181, 55, 0.3);
+  --give-a-rating-no-filled-color: rgba(60, 59, 59, 1);
 
   --priority-text-color: #fff;
   --filter-text-color: rgba(255, 255, 255, 0.5);
@@ -118,6 +123,7 @@ img {
   --secondary-rating-and-others-text-color: rgba(255, 255, 255, 0.5);
   --topic-desc-text-color: rgba(255, 255, 255, 0.6);
   --topic-country-text-color: rgba(255, 255, 255, 0.2);
+  --active-link-mobile-menu-color: #9bb537;
 }
 
 body {
@@ -171,6 +177,10 @@ code {
   overflow: hidden;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
 .swiper-pagination {
   position: absolute;
   text-align: center;
@@ -194,16 +204,10 @@ code {
 .swiper-pagination-bullet-active {
   background-color: #9bb537;
 }
-.modal {
-  width: 200px;
-  height: 100vh;
-  bottom: 0;
-  background-color: #9bb537;
-  position: fixed;
-  right: -200px;
-  transition: right 0.5s ease-in-out;
+.Dropdown-option.is-selected {
+  background-color: transparent;
+  color: var(--priority-text-color);
 }
-
 .modal-entering,
 .modal-exiting {
   right: -200px;
@@ -211,6 +215,12 @@ code {
 
 .modal-entered {
   right: 0;
+}
+.Toastify__toast.Toastify__toast--success {
+  border: 1px solid var(--accent-color);
+  color: var(--priority-text-color);
+  background-color: var(--secondary-background-color);
+  border-radius: 15px;
 }
 .container {
   width: 100%;

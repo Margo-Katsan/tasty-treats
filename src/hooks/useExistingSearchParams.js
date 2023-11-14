@@ -30,5 +30,14 @@ export const useExistingSearchParams = () => {
     }
 
   }
-  return { updatingSearchParams };
+  const updatingAllSearchParams = () => {
+    if (searchParams.get('category')) {
+      setSearchParams({ category: searchParams.get('category') });
+    }
+    else {
+      setSearchParams({})
+    }
+    
+  }
+  return { updatingSearchParams, updatingAllSearchParams };
 }

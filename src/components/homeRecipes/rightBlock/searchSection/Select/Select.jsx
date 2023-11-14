@@ -1,18 +1,17 @@
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import { HiChevronDown, HiChevronUp } from 'react-icons/hi';
+import { useResetFilter } from 'hooks/useResetFilter';
 import svg from 'images/sprite.svg'
 import css from "./Select.module.css"
-import { useState } from 'react';
 
-export const Select = ({ options, placeholder, onSelect, onReset, defaultOption, filterToReset }) => {
-  const [selectedOption, setSelectedOption] = useState({value: '', label: placeholder});
-  const [isSelect, setIsSelect] = useState(false);
+
+export const Select = ({ options, placeholder, onSelect, onReset, filterToReset }) => {
+  const { selectedOption, isSelect, handleResetSelectedOption, handleChangeSelectedOption } = useResetFilter(placeholder);
   
   const handleReset = () => {
-    setIsSelect(false);
     onReset(filterToReset);
-    setSelectedOption(defaultOption)
+    handleResetSelectedOption({value: '', label: placeholder})
   }
 
   return (
@@ -26,16 +25,16 @@ export const Select = ({ options, placeholder, onSelect, onReset, defaultOption,
         placeholderClassName={css.placeholder}
         menuClassName={css.menu}
         
-        onChange={evt => { onSelect(evt); setIsSelect(true); console.log('select'); setSelectedOption(evt.value) }}
+        onChange={evt => { onSelect(evt); handleChangeSelectedOption(evt) }}
         
         arrowClosed={
           <span className="arrow-open">
-            <HiChevronDown size={18} color={"rgba(5, 5, 5, 0.5)"} />
+            <HiChevronDown size={18} color={"var(--filter-text-color)"} />
           </span>
         }
         arrowOpen={
           <span className="arrow-open">
-            <HiChevronUp size={18} color={"rgba(5, 5, 5, 0.5)"}/>
+            <HiChevronUp size={18} color={"var(--filter-text-color)"}/>
           </span>
         }
       
@@ -44,7 +43,7 @@ export const Select = ({ options, placeholder, onSelect, onReset, defaultOption,
       {isSelect && (
         <span className={css.close}>
           <svg width='16' height='16' fill='rgba(5, 5, 5, 0.5)' onClick={handleReset}>
-            <use href={`${svg}#icon-search-close`}></use>
+            <use href={`${svg}#search-close`}></use>
           </svg>
         </span>
       )}

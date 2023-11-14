@@ -1,13 +1,18 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useWindowSize } from '@uidotdev/usehooks';
+
+import { setItemOffset } from 'redux/favoritesSlice';
+import { selectFavoritesCategory } from "redux/selectors";
 import ReactPaginate from 'react-paginate';
 import { IconArrow } from '../IconArrow/IconArrow';
 import css from "./Pagination.module.css"
 
-export const Pagination = ({ totalRecipes, filtersToResetPagination, onPageClick }) => {
+export const Pagination = ({ totalRecipes, onPageClick }) => {
   const { wrapper, firstPage, pagination, active, activeLink, page, pageLink, previous, previousLink, next, nextLink, disabled, breakLink, lastPage, numberPage, breakPage, currentPageNotZero } = css;
-  
+  const dispatch = useDispatch();
+   const category = useSelector(selectFavoritesCategory);
   const [searchParams] = useSearchParams();
   const selectedPage = parseInt(searchParams.get('page'));
   const windowWidth = useWindowSize().width;
@@ -46,6 +51,11 @@ export const Pagination = ({ totalRecipes, filtersToResetPagination, onPageClick
     }
   }, [selectedPage]);
 
+  useEffect(() => {
+    console.log(category)
+    setCurrentPage(0);
+    dispatch(setItemOffset(0))
+  }, [dispatch, category])
  
 
   const handlePageClick = page => {
