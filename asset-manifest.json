@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tasty-treats/static/css/main.3da44184.css",
-    "main.js": "/tasty-treats/static/js/main.001a533d.js",
-    "static/css/783.60ac88cd.chunk.css": "/tasty-treats/static/css/783.60ac88cd.chunk.css",
-    "static/js/783.29707dbd.chunk.js": "/tasty-treats/static/js/783.29707dbd.chunk.js",
-    "static/css/705.62bbd33e.chunk.css": "/tasty-treats/static/css/705.62bbd33e.chunk.css",
+    "main.css": "/tasty-treats/static/css/main.d69c381e.css",
+    "main.js": "/tasty-treats/static/js/main.ad42d3ba.js",
+    "static/css/783.e7040571.chunk.css": "/tasty-treats/static/css/783.e7040571.chunk.css",
+    "static/js/783.2ceaa431.chunk.js": "/tasty-treats/static/js/783.2ceaa431.chunk.js",
+    "static/css/705.dcd92f8f.chunk.css": "/tasty-treats/static/css/705.dcd92f8f.chunk.css",
     "static/js/705.5c3cc56e.chunk.js": "/tasty-treats/static/js/705.5c3cc56e.chunk.js",
-    "static/css/738.9274c9d8.chunk.css": "/tasty-treats/static/css/738.9274c9d8.chunk.css",
-    "static/js/738.c6699ef5.chunk.js": "/tasty-treats/static/js/738.c6699ef5.chunk.js",
+    "static/css/481.8f3a365f.chunk.css": "/tasty-treats/static/css/481.8f3a365f.chunk.css",
+    "static/js/481.11e1187a.chunk.js": "/tasty-treats/static/js/481.11e1187a.chunk.js",
     "static/js/966.cdbc3cfa.chunk.js": "/tasty-treats/static/js/966.cdbc3cfa.chunk.js",
-    "static/js/93.681c1d47.chunk.js": "/tasty-treats/static/js/93.681c1d47.chunk.js",
+    "static/js/93.416dbaab.chunk.js": "/tasty-treats/static/js/93.416dbaab.chunk.js",
     "static/media/hero-desktop@2x.jpg": "/tasty-treats/static/media/hero-desktop@2x.6c3db58ee6765e70fd66.jpg",
     "static/media/hero-tablet@2x.jpg": "/tasty-treats/static/media/hero-tablet@2x.78ff7b766f100598a0d9.jpg",
     "static/media/hero-mobile@2x.jpg": "/tasty-treats/static/media/hero-mobile@2x.932733af5f3f9b280072.jpg",
@@ -22,19 +22,19 @@
     "static/media/Inter-Regular.woff": "/tasty-treats/static/media/Inter-Regular.98692f75124061fa1ba1.woff",
     "static/media/sprite.svg": "/tasty-treats/static/media/sprite.98b36a98e3ccf30602c9c0707a9010b3.svg",
     "index.html": "/tasty-treats/index.html",
-    "main.3da44184.css.map": "/tasty-treats/static/css/main.3da44184.css.map",
-    "main.001a533d.js.map": "/tasty-treats/static/js/main.001a533d.js.map",
-    "783.60ac88cd.chunk.css.map": "/tasty-treats/static/css/783.60ac88cd.chunk.css.map",
-    "783.29707dbd.chunk.js.map": "/tasty-treats/static/js/783.29707dbd.chunk.js.map",
-    "705.62bbd33e.chunk.css.map": "/tasty-treats/static/css/705.62bbd33e.chunk.css.map",
+    "main.d69c381e.css.map": "/tasty-treats/static/css/main.d69c381e.css.map",
+    "main.ad42d3ba.js.map": "/tasty-treats/static/js/main.ad42d3ba.js.map",
+    "783.e7040571.chunk.css.map": "/tasty-treats/static/css/783.e7040571.chunk.css.map",
+    "783.2ceaa431.chunk.js.map": "/tasty-treats/static/js/783.2ceaa431.chunk.js.map",
+    "705.dcd92f8f.chunk.css.map": "/tasty-treats/static/css/705.dcd92f8f.chunk.css.map",
     "705.5c3cc56e.chunk.js.map": "/tasty-treats/static/js/705.5c3cc56e.chunk.js.map",
-    "738.9274c9d8.chunk.css.map": "/tasty-treats/static/css/738.9274c9d8.chunk.css.map",
-    "738.c6699ef5.chunk.js.map": "/tasty-treats/static/js/738.c6699ef5.chunk.js.map",
+    "481.8f3a365f.chunk.css.map": "/tasty-treats/static/css/481.8f3a365f.chunk.css.map",
+    "481.11e1187a.chunk.js.map": "/tasty-treats/static/js/481.11e1187a.chunk.js.map",
     "966.cdbc3cfa.chunk.js.map": "/tasty-treats/static/js/966.cdbc3cfa.chunk.js.map",
-    "93.681c1d47.chunk.js.map": "/tasty-treats/static/js/93.681c1d47.chunk.js.map"
+    "93.416dbaab.chunk.js.map": "/tasty-treats/static/js/93.416dbaab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3da44184.css",
-    "static/js/main.001a533d.js"
+    "static/css/main.d69c381e.css",
+    "static/js/main.ad42d3ba.js"
   ]
 }
