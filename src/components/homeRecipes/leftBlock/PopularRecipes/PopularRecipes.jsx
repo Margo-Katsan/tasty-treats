@@ -39,9 +39,12 @@ export const PopularRecipes = () => {
         })}
         
       </ul>
-      <Modal showModal={showModal} onClose={handleCloseModal}>
+      {showModal && (
+        <Modal onClose={handleCloseModal}>
         <RecipesDetails recipeId={searchParams.get('id')} />
       </Modal>
+      )}
+      
     </section>
   )
 }

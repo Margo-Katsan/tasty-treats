@@ -75,4 +75,11 @@ input::-webkit-inner-spin-button {
   border-radius: 15px;
   background-color: var(--accent-color);
   color: var(--accent-text-color);
+  transition: color var(--transition-dur-and-func);
+  cursor: pointer;
+}
+@media screen and (min-width: 1200px) {
+  .btn:hover {
+    color: var(--accent-hover-text-color);
+  }
 }

@@ -21,17 +21,11 @@ export const RecipeItem = ({ recipeData, favoriteClassName = "" }) => {
     setIsFavorite(favorites.filter(favorite => favorite._id === recipeData._id).length !== 0)
   }, [favorites, recipeData])
  
-useEffect(() => {
-    if (searchParams.get('id') !== null && !showModal) {
-      handleOpenModal();
-    }
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+
   const handleToogleFavorites = recipeData => {
     dispatch(toogleFavorites(recipeData));
     setIsFavorite(isFavorite => !isFavorite);
   }
-
   return (
     <>
       <li key={_id} className={`${item} ${favoriteClassName}`}>
@@ -59,9 +53,12 @@ useEffect(() => {
         </div>
       </article>
       </li>
-      <Modal showModal={showModal} onClose={handleCloseModal}>
+      {showModal && (
+        <Modal onClose={handleCloseModal}>
         <RecipesDetails onToggleFavorites={handleToogleFavorites} recipeId={searchParams.get('id')} recipeData={recipeData} isFavorite={isFavorite} />
       </Modal>
+      )}
+      
     </>
     
     

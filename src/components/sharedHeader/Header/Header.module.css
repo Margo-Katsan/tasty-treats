@@ -17,6 +17,8 @@
 }
 .cart {
   color: var(--priority-elements-color);
+  transition: color var(--transition-dur-and-func);
+  cursor: pointer;
 }
 .cartBtn {
   border: none;
@@ -32,12 +34,17 @@
 }
 .orderNowModal {
   width: 335px;
-  height: 582px;
-}
 
+  height: 680px;
+}
 @media screen and (min-width: 768px) {
   .orderNowModal {
     width: 440px;
-    height: 632px;
+    height: 720px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cart:hover {
+    color: var(--accent-color);
   }
 }

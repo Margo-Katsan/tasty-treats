@@ -27,15 +27,8 @@ export const Slider = () => {
 
   return (
     <Swiper
-      loop={true}
-      slidesPerView='auto'
-      spaceBetween = {8}
-      slidesPerGroup={3}
-      breakpoints={{
-        768: {
-          spaceBetween: 16,
-        },
-      }}
+      slidesPerView={1}
+      spaceBetween = {16}
       pagination={{
         clickable: true,
       }}
@@ -43,16 +36,14 @@ export const Slider = () => {
       modules={[Pagination]}
   
     >
-      {events.map((event, index) =>
-        [<SwiperSlide className={css.slide} style={{width: 'fit-content'}}>
+      {events.map((event, index) => (
+        <SwiperSlide className={css.slide}>
           <SliderCookItem cook={event.cook} />
-        </SwiperSlide>,
-          <SwiperSlide className={css.slide} style={{width: 'fit-content'}}>
-            <SliderTopicInfoItem topic={event.topic} imgTopicName={index === 1 ? 'pizza' : null} />
-        </SwiperSlide>,
-          <SwiperSlide className={css.slide} style={{width: 'fit-content'}}>
-            <SliderBigTopicItem topic={event.topic} />
-        </SwiperSlide>]
+          <SliderTopicInfoItem topic={event.topic} imgTopicName={index === 1 ? 'pizza' : null} />
+          <SliderBigTopicItem topic={event.topic} />
+        </SwiperSlide>
+      )
+        
       )}
     </Swiper>
   );

@@ -46,6 +46,11 @@
   border-radius: 15px;
   background-color: transparent;
   border: 1px solid var(--filter-border-color);
+  transition: border-color var(--transition-dur-and-func);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--accent-color);
 }
 .textarea {
   resize: none;
@@ -62,6 +67,8 @@
   color: var(--accent-text-color);
   border-radius: 15px;
   background: var(--accent-color);
+  transition: color var(--transition-dur-and-func);
+  cursor: pointer;
 }
 .error {
   font-size: 12px;
@@ -76,5 +83,10 @@
   }
   .mainTitle {
     margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .btn:hover {
+    color: var(--accent-hover-text-color);
   }
 }

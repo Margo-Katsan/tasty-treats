@@ -8,14 +8,24 @@
   color: var(--priority-text-color);
   border-radius: 12px;
   background-color: transparent;
+  transition: color var(--transition-dur-and-func),
+    background-color var(--transition-dur-and-func);
+  cursor: pointer;
 }
 .orderNowModal {
   width: 335px;
-  height: 582px;
+
+  height: 680px;
 }
 @media screen and (min-width: 768px) {
   .orderNowModal {
     width: 440px;
-    height: 632px;
+    height: 720px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .btn:hover {
+    color: var(--accent-text-color);
+    background-color: var(--accent-color);
   }
 }

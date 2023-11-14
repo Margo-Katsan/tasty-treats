@@ -6,7 +6,14 @@
 
   color: var(--filter-option-text-color);
   background-color: transparent;
+  transition: color var(--transition-dur-and-func);
+  cursor: pointer;
 }
 .selected {
   color: var(--accent-color);
+}
+@media screen and (min-width: 1200px) {
+  .btn:hover {
+    color: var(--accent-color);
+  }
 }

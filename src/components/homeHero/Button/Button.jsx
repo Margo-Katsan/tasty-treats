@@ -8,9 +8,12 @@ export const Button = () => {
   return (
     <>
       <button onClick={openModal} className={css.btn}>Order now</button>
-      <Modal showModal={showModal} onClose={closeModal} modalClass = {css.orderNowModal}>
+      {showModal && (
+        <Modal onClose={closeModal} modalClass = {css.orderNowModal}>
         <OrderNow />
       </Modal>
+      )}
+      
     </>
   )
 }

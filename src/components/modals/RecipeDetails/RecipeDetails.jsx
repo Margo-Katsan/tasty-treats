@@ -36,7 +36,6 @@ export const RecipesDetails = ({ recipeId, onToggleFavorites, recipeData, isFavo
       setInstructions(fetchedRecipe.instructions);
       setPreview(fetchedRecipe.preview);
       setTime(fetchedRecipe.time)
-      console.log(fetchedRecipe.tags)
     }
     fetchingRecipeById();
   }, [recipeId])

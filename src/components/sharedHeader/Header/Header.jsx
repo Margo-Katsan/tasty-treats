@@ -39,9 +39,11 @@ export const Header = () => {
           <BurgerMenu />
         </div>
       </div>
-      <Modal showModal={showModal} onClose={closeModal} modalClass = {css.orderNowModal}>
+      {showModal && (
+        <Modal onClose={closeModal} modalClass = {css.orderNowModal}>
         <OrderNow />
       </Modal>
+      )}
     </header>
   )
 }

@@ -10,6 +10,9 @@
   border-radius: 15px;
   border: 1px solid var(--filter-border-color);
   background-color: transparent;
+  transition: color var(--transition-dur-and-func),
+    background-color var(--transition-dur-and-func);
+  cursor: pointer;
 }
 .selected {
   color: var(--accent-text-color);
@@ -45,5 +48,11 @@
   }
   .list::-webkit-scrollbar {
     height: 201px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .btn:hover {
+    color: var(--accent-text-color);
+    background-color: var(--accent-color);
   }
 }

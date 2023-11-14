@@ -8,9 +8,12 @@ export const GiveARatingBtn = () => {
   return (
     <>
       <button className={css.btn} onClick={openModal} type="button">Give a rating</button>
-    <Modal showModal={showModal} onClose={closeRatingModal} modalClass = {css.modal}>
+      {showModal && (
+        <Modal onClose={closeRatingModal} modalClass = {css.modal}>
         <ModalGiveARating />
       </Modal>
+      )}
+    
     </>
     
   )
