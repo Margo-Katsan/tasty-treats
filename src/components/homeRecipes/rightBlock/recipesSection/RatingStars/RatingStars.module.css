@@ -16,3 +16,9 @@
   display: flex;
   gap: 4px;
 }
+@media screen and (min-width: 768px) {
+  .ratingList {
+    width: 72px;
+    gap: 2px;
+  }
+}

@@ -41,9 +41,12 @@ useEffect(() => {
             <use href={`${svg}#heart`}></use>
           </svg>
         </button>
-        <div className={info}>
-          <h3 className={name}>{title}</h3>
+          <div className={info}>
+            <div className={css.textInfo}>
+              <h3 className={name}>{title}</h3>
           <p className={desc}>{description}</p>
+            </div>
+          
           <div className={ratingAndBtnWrapper}>
             <div className={ratingWrapper}>
               <span className={ratingNumber}>{rating.toFixed(1)}</span>

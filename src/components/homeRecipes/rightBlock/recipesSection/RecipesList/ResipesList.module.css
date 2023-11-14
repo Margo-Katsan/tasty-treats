@@ -1,10 +1,12 @@
 .list {
   width: 100%;
+
   margin-bottom: 40px;
 }
 @media screen and (min-width: 768px) {
   .list {
     width: 496px;
+
     margin-bottom: 64px;
     display: flex;
     flex-wrap: wrap;
@@ -14,6 +16,7 @@
 @media screen and (min-width: 1200px) {
   .list {
     width: 782px;
-    gap: 44px 16px;
+
+    gap: 32px 16px;
   }
 }
