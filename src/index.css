@@ -142,6 +142,9 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  transition: color var(--transition-dur-and-func),
+    background-color var(--transition-dur-and-func);
 }
 
 .visually-hidden {
@@ -216,6 +219,13 @@ body {
 
 .modal-entered {
   right: 0;
+}
+
+input:-internal-autofill-selected {
+  appearance: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  color: var(--priority-text-color) !important;
 }
 .Toastify__toast.Toastify__toast--success {
   border: 1px solid var(--accent-color);

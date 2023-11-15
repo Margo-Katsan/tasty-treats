@@ -9,7 +9,7 @@
   height: fit-content;
 
   display: flex;
-  gap: 16px;
+  gap: 8px;
 }
 @media screen and (max-width: 374px) {
   .slider {
@@ -28,6 +28,7 @@
   }
   .slide {
     width: 871px;
+    gap: 16px;
   }
 }
 @media screen and (min-width: 871px) and (max-width: 1199px) {

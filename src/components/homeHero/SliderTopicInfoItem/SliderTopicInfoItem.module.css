@@ -26,6 +26,7 @@
   background: #050505;
   border-radius: 15px;
   border: 1px solid var(--topic-border-color);
+  transition: border var(--transition-dur-and-func);
 }
 
 .blur {
