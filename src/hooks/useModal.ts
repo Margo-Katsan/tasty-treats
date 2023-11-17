@@ -26,7 +26,7 @@ export const useModal = () => {
     setShowModal(false);
     document.documentElement.classList.remove('ReactModal__Html--open');
   }
-  const handleOpenModal = id => {
+  const handleOpenModal = (id: any) => {
     document.documentElement.classList.add('ReactModal__Html--open');
     if (!searchParams.get('id')) {
       updatingSearchParams('id', id)

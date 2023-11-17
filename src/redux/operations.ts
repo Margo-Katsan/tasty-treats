@@ -12,7 +12,7 @@ export const fetchRecipes = createAsyncThunk(
       });
       return response.data;
     } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
+      return thunkAPI.rejectWithValue((e as any).message);
     }
   }
 );

@@ -15,12 +15,13 @@ const favoritesSlice = createSlice({
   },
   reducers: {
     toogleFavorites(state, action) {
-      const isFavoriteExist = state.items.filter(favorite => favorite._id === action.payload._id).length !== 0;
+      const isFavoriteExist = state.items.filter(favorite => (favorite as any)._id === action.payload._id).length !== 0;
       if (isFavoriteExist) {
-        state.items = state.items.filter(favorite => action.payload._id !== favorite._id);
+        state.items = state.items.filter(favorite => action.payload._id !== (favorite as any)._id);
         state.totalFavorites = state.totalFavorites - 1;
         return;
       }
+      // @ts-expect-error TS(2345): Argument of type 'any' is not assignable to parame... Remove this comment to see the full error message
       state.items.push(action.payload);
       state.totalFavorites = state.totalFavorites + 1;
     },
@@ -30,7 +31,7 @@ const favoritesSlice = createSlice({
     setFavoritesCategory(state, action) {
       state.category = action.payload
       if (action.payload !== '') {
-        state.totalFavorites = state.items.filter(favorite => action.payload === favorite.category).length;
+        state.totalFavorites = state.items.filter(favorite => action.payload === (favorite as any).category).length;
       }
       else {
         state.totalFavorites = state.items.length;
@@ -47,5 +48,6 @@ const persistConfig = {
   storage,
 }
 
+// @ts-expect-error TS(2339): Property 'setTotalfavorites' does not exist on typ... Remove this comment to see the full error message
 export const { toogleFavorites, setItemOffset, setFavoritesCategory, setPerPage, setTotalfavorites } = favoritesSlice.actions;
 export const favoritesReducer = persistReducer(persistConfig, favoritesSlice.reducer);

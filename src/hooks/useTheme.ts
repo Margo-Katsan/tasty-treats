@@ -11,7 +11,7 @@ export const useTheme = () => {
     localStorage.setItem('app-theme', theme);
   }, [theme]);
 
-  const toggleChangeTheme = isDark => {
+  const toggleChangeTheme = (isDark: any) => {
     setTheme(isDark ? 'dark' : 'light');
   };
 

@@ -6,7 +6,7 @@ export const fetchPopularRecipes = async () => {
   return response.data;
 }
 
-export const fetchRecipeById = async recipeId => {
+export const fetchRecipeById = async (recipeId: any) => {
   const response = await axios.get(`recipes/${recipeId}`);
   return response.data;
 }
@@ -31,7 +31,7 @@ export const fetchIngredients = async () => {
   return response.data;
 }
 
-export const addOrder = async data => {
+export const addOrder = async (data: any) => {
   try {
     
       const resp = await axios.post("orders/add", data);
@@ -44,7 +44,7 @@ export const addOrder = async data => {
     }
   }
 
-export const patchRating = async (recipeId, data) => {
+export const patchRating = async (recipeId: any, data: any) => {
   try {
     const resp = await axios.patch(`recipes/${recipeId}/rating`, data);
     if (resp.status !== 200) {

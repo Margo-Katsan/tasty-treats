@@ -1,6 +1,8 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
  import * as Yup from 'yup';
+// @ts-expect-error TS(2307): Cannot find module 'api' or its corresponding type... Remove this comment to see the full error message
 import { addOrder } from 'api';
+// @ts-expect-error TS(2307): Cannot find module './OrderNow.module.css' or its ... Remove this comment to see the full error message
 import css from './OrderNow.module.css';
 
 const schema = Yup.object().shape({
@@ -15,8 +17,11 @@ const schema = Yup.object().shape({
 export const OrderNow = () => {
   
   return (
+    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <div className={css.content}>
+     {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
      <p className={css.mainTitle}>Order now</p>
+     {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
      <Formik
         initialValues={{
           name: '',
@@ -30,10 +35,15 @@ export const OrderNow = () => {
           actions.resetForm();
         }}
      >
+        {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
         <Form className={css.form}>
+          {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           <div className={css.wrapper}>
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <label className={css.label}>
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <span className={css.title}>Name<span className={css.star}>&nbsp;*</span></span>
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <Field
               className={css.input}
               type="text"
@@ -42,10 +52,14 @@ export const OrderNow = () => {
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
             />
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <ErrorMessage className={css.error} name="name" component="p"/>
           </label>
+          {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           <label className={css.label}>
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <span className={css.title}>Phone number<span className={css.star}>&nbsp;*</span></span>
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <Field
               className={css.input}
               type="tel"
@@ -54,10 +68,14 @@ export const OrderNow = () => {
               title="Phone number must start with a plus sign and have 10 to 15 digits. For example, +123456789012"
               required
             />
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <ErrorMessage className={css.error} name="phone" component="p"/>
           </label>
+          {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           <label className={css.label}>
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <span className={css.title}>Email<span className={css.star}>&nbsp;*</span></span>
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <Field
               className={css.input}
               type="email"
@@ -66,9 +84,13 @@ export const OrderNow = () => {
               title="Please enter a valid email address."
               required
             />
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <ErrorMessage className={css.error} name="email" component="p"/>
+          {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           </label><label className={css.label}>
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <span className={css.title}>Comment</span>
+            {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <Field
               className={`${css.input} ${css.textarea}`}
               as="textarea"
@@ -80,6 +102,7 @@ export const OrderNow = () => {
           
           
            
+           {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
            <button type="submit" className={css.btn}>
              Send
            </button>
