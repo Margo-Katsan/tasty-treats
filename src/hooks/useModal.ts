@@ -4,7 +4,7 @@ import { useExistingSearchParams } from './useExistingSearchParams';
 
 export const useModal = () => {
   const [searchParams] = useSearchParams();
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
   const { updatingSearchParams } = useExistingSearchParams();
   const openModal = () => {
     setShowModal(true);
@@ -26,7 +26,7 @@ export const useModal = () => {
     setShowModal(false);
     document.documentElement.classList.remove('ReactModal__Html--open');
   }
-  const handleOpenModal = (id: any) => {
+  const handleOpenModal = (id: string) => {
     document.documentElement.classList.add('ReactModal__Html--open');
     if (!searchParams.get('id')) {
       updatingSearchParams('id', id)

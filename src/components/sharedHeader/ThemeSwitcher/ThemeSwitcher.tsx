@@ -1,33 +1,26 @@
 import { useState } from "react";
-// @ts-expect-error TS(2307): Cannot find module 'hooks/useTheme' or its corresp... Remove this comment to see the full error message
 import { useTheme } from "hooks/useTheme"
 import Switch from "react-switch";
-// @ts-expect-error TS(2307): Cannot find module './ThemeSwitcher.module.css' or... Remove this comment to see the full error message
 import css from "./ThemeSwitcher.module.css"
 
-export const ThemeSwitcher = ({
-  mobileThemeSwitcher
-}: any) => {
+export const ThemeSwitcher = ({mobileThemeSwitcher}: any) => {
   
   const { toggleChangeTheme } = useTheme();
-  const [isDarkTheme, setIsDarkTheme] = useState(localStorage.getItem('app-theme') === 'dark' ? true : false);
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean>(localStorage.getItem('app-theme') === 'dark' ? true : false);
 
-  const handleChangeTheme = (nextChecked: any) => {
+  const handleChangeTheme = (nextChecked: boolean) => {
     setIsDarkTheme(nextChecked);
     toggleChangeTheme(nextChecked);
   };
 
   return (
-    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <div className={`${css.themeSwitcher} ${css[mobileThemeSwitcher]}`}>
-      {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <Switch
         onChange={handleChangeTheme}
         checked={isDarkTheme}
         handleDiameter={18.8}
         height={20}
         width={46}
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
         uncheckedIcon={<div
           style={{
             position: "absolute",
@@ -39,7 +32,6 @@ export const ThemeSwitcher = ({
         }}
       ></div>}
         checkedIcon={false}
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
         checkedHandleIcon={<div
           style={{
           width: "100%",

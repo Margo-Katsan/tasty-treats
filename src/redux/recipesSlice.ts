@@ -1,31 +1,47 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchRecipes } from "./operations";
+import { IRecipes } from "interface/Recipes"
+import {IDetailedRecipeData} from "interface/DetailedRecipeData"
 
-const handlePending = (state: any) => {
+interface RecipesState {
+  totalRecipes: number;
+  totalRecipesPages: number
+  items: IDetailedRecipeData[];
+  isLoading: boolean;
+  error: string | null;
+}
+
+const initialState: RecipesState = {
+  totalRecipes: 0,
+  totalRecipesPages: 0,
+  items: [],
+  isLoading: false,
+  error: null,
+};
+
+const handlePending = (state: RecipesState) => {
   state.isLoading = true;
 };
 
-const handleRejected = (state: any, action: any) => {
+const handleRejected = (state: RecipesState, action: any) => {
   state.isLoading = false;
   state.error = action.payload;
 };
 
-const handleFetchRecipesFulfilled = (state: any, action: any) => {
+const handleFetchRecipesFulfilled = (state: RecipesState, action: PayloadAction<IRecipes>) => {
   state.isLoading = false;
   state.error = null;
-  state.totalRecipes = action.payload.totalPages;
+  state.totalRecipesPages = action.payload.totalPages;
+  state.totalRecipes = action.payload.totalPages * action.payload.results.length;
   state.items = action.payload.results;
+  
 }
 
-// @ts-expect-error TS(2345): Argument of type '{ name: "recipes"; initialState:... Remove this comment to see the full error message
+
 const recipesSlice = createSlice({
   name: "recipes",
-  initialState: {
-    totalRecipes: 0,
-    items: [],
-    isLoading: false,
-    error: null,
-  },
+  initialState,
+  reducers: {},
   extraReducers: builder =>
     builder
       .addCase(fetchRecipes.pending, handlePending)

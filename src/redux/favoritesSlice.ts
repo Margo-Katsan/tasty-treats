@@ -1,43 +1,59 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import {IDetailedRecipeData} from "interface/DetailedRecipeData"
+
+interface IFavoritesState {
+  items: IDetailedRecipeData[];
+  category: string;
+  totalFavorites: number;
+  perPage: number,
+  itemOffset: number,
+  isLoading: boolean;
+}
+
+const initialState: IFavoritesState = {
+  items: [],
+  category: '',
+  totalFavorites: 0,
+  perPage: window.innerWidth < 768 ? 9 : 12,
+  itemOffset: 0,
+  isLoading: false,
+};
 
 const favoritesSlice = createSlice({
   name: "favorites",
-  initialState: {
-    items: [],
-    category: '',
-    totalFavorites: 0,
-    perPage: window.innerWidth < 768 ? 9 : 12,
-    itemOffset: 0,
-    isLoading: false,
-    error: null,
-  },
+  initialState,
   reducers: {
-    toogleFavorites(state, action) {
-      const isFavoriteExist = state.items.filter(favorite => (favorite as any)._id === action.payload._id).length !== 0;
+    toggleFavorites(state: IFavoritesState, action: PayloadAction<IDetailedRecipeData>) {
+      const isFavoriteExist = state.items.filter(favorite => favorite._id === action.payload._id).length !== 0;
       if (isFavoriteExist) {
-        state.items = state.items.filter(favorite => action.payload._id !== (favorite as any)._id);
-        state.totalFavorites = state.totalFavorites - 1;
-        return;
+        state.items = state.items.filter(favorite => action.payload._id !== favorite._id);
       }
-      // @ts-expect-error TS(2345): Argument of type 'any' is not assignable to parame... Remove this comment to see the full error message
-      state.items.push(action.payload);
-      state.totalFavorites = state.totalFavorites + 1;
+      else {
+        state.items.push(action.payload);
+      }
+      state.totalFavorites = state.items.length;
     },
-    setItemOffset(state, action) {
+    setItemOffset(state: IFavoritesState, action: PayloadAction<number>) {
       state.itemOffset = action.payload
     },
-    setFavoritesCategory(state, action) {
-      state.category = action.payload
+    setFavoritesCategory(state: IFavoritesState, action: PayloadAction<string>) {
+      state.category = action.payload;
+      state.itemOffset = 0;
+      
       if (action.payload !== '') {
-        state.totalFavorites = state.items.filter(favorite => action.payload === (favorite as any).category).length;
+        state.totalFavorites = state.items.filter(favorite => action.payload === (favorite).category).length;
       }
       else {
         state.totalFavorites = state.items.length;
       }
+
+        
+
+
     },
-    setPerPage(state, action) {
+    setPerPage(state: IFavoritesState, action) {
       state.perPage = action.payload
     }
   },
@@ -48,6 +64,6 @@ const persistConfig = {
   storage,
 }
 
-// @ts-expect-error TS(2339): Property 'setTotalfavorites' does not exist on typ... Remove this comment to see the full error message
-export const { toogleFavorites, setItemOffset, setFavoritesCategory, setPerPage, setTotalfavorites } = favoritesSlice.actions;
+
+export const { toggleFavorites, setItemOffset, setFavoritesCategory, setPerPage } = favoritesSlice.actions;
 export const favoritesReducer = persistReducer(persistConfig, favoritesSlice.reducer);
