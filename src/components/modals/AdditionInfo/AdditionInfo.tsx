@@ -17,8 +17,10 @@ export const AdditionInfo: FC<IAdditionInfoProps> = ({windowWidth, tags, rating,
         <Tags tags={tags}/>
       )}
       <div className={css.wrapper}>
-        <span className={css.ratingNumber}>{rating.toFixed(1)}</span>
-      <RatingStars rating={rating} fillNoFilled={css.noFilled} />
+        <div className={css.ratingWrapper}>
+          <span className={css.ratingNumber}>{rating.toFixed(1)}</span>
+          <RatingStars rating={rating} fillNoFilled={css.noFilled} />
+        </div>
         <span className={css.time}>{time} min</span>
       </div>
     </div>

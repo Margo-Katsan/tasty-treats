@@ -44,10 +44,12 @@
   padding-left: 18px;
 
   border-radius: 15px;
+  color: var(--filter-text-color);
   background-color: transparent;
   border: 1px solid var(--filter-border-color);
   transition: border-color var(--transition-dur-and-func);
 }
+
 .input:focus {
   outline: none;
   border-color: var(--accent-color);

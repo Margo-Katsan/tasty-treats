@@ -2,6 +2,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { addOrder } from 'api';
 import { useNotify } from "hooks/useNotify";
+import { IOrder } from 'interface/Order';
 import css from './OrderNow.module.css';
 
 const schema = Yup.object().shape({
@@ -29,7 +30,16 @@ export const OrderNow = () => {
         validationSchema={schema}
         onSubmit={async (values, actions) => {
           try {
-            const status = await addOrder(values);
+            const orderValues: IOrder = values;
+            const shouldSendComment = values.comment.trim() !== '';
+            
+            if (!shouldSendComment) {
+              delete orderValues.comment;
+            }
+    
+            const status = await addOrder(orderValues);
+
+            
             if (status === 201) {
               notifySuccess("Your order has been sent successfully")
               actions.resetForm();

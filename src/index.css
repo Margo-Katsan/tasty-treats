@@ -30,7 +30,7 @@
   font-style: normal;
   font-display: swap;
 }
-/* Reset styles */
+
 h1,
 h2,
 h3,
@@ -160,22 +160,11 @@ body {
   overflow: hidden;
 }
 
-.btn {
-  padding: 8px 14px;
-  font-family: inherit;
-
-  background-color: var(--accent-color);
-  color: var(--sec-text-color);
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.2;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .ReactModal__Body--open,
 .ReactModal__Html--open {
   overflow: hidden;
@@ -185,6 +174,7 @@ html,
 body {
   overflow-x: hidden;
 }
+
 .swiper-pagination {
   position: absolute;
   text-align: center;
@@ -208,10 +198,12 @@ body {
 .swiper-pagination-bullet-active {
   background-color: #9bb537;
 }
+
 .Dropdown-option.is-selected {
   background-color: transparent;
   color: var(--priority-text-color);
 }
+
 .modal-entering,
 .modal-exiting {
   right: -200px;
@@ -221,24 +213,23 @@ body {
   right: 0;
 }
 
-input:-internal-autofill-selected {
-  appearance: none !important;
-  background-image: none !important;
-  background-color: transparent !important;
-  color: var(--priority-text-color) !important;
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s;
 }
+
 .Toastify__toast.Toastify__toast--success {
   border: 1px solid var(--accent-color);
   color: var(--priority-text-color);
   background-color: var(--secondary-background-color);
   border-radius: 15px;
 }
+
 .container {
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
-
 @media screen and (min-width: 375px) {
   .container {
     max-width: 375px;
