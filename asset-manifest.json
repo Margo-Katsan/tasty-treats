@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/tasty-treats/static/css/main.3964b643.css",
-    "main.js": "/tasty-treats/static/js/main.cf66fc96.js",
+    "main.css": "/tasty-treats/static/css/main.21a55da4.css",
+    "main.js": "/tasty-treats/static/js/main.2c8a59a1.js",
     "static/css/545.de91dd0a.chunk.css": "/tasty-treats/static/css/545.de91dd0a.chunk.css",
     "static/js/545.1d42dd94.chunk.js": "/tasty-treats/static/js/545.1d42dd94.chunk.js",
     "static/css/637.51ae6008.chunk.css": "/tasty-treats/static/css/637.51ae6008.chunk.css",
@@ -20,8 +20,8 @@
     "static/media/Inter-Regular.woff": "/tasty-treats/static/media/Inter-Regular.98692f75124061fa1ba1.woff",
     "static/media/sprite.svg": "/tasty-treats/static/media/sprite.98b36a98e3ccf30602c9c0707a9010b3.svg",
     "index.html": "/tasty-treats/index.html",
-    "main.3964b643.css.map": "/tasty-treats/static/css/main.3964b643.css.map",
-    "main.cf66fc96.js.map": "/tasty-treats/static/js/main.cf66fc96.js.map",
+    "main.21a55da4.css.map": "/tasty-treats/static/css/main.21a55da4.css.map",
+    "main.2c8a59a1.js.map": "/tasty-treats/static/js/main.2c8a59a1.js.map",
     "545.de91dd0a.chunk.css.map": "/tasty-treats/static/css/545.de91dd0a.chunk.css.map",
     "545.1d42dd94.chunk.js.map": "/tasty-treats/static/js/545.1d42dd94.chunk.js.map",
     "637.51ae6008.chunk.css.map": "/tasty-treats/static/css/637.51ae6008.chunk.css.map",
@@ -30,7 +30,7 @@
     "966.cdbc3cfa.chunk.js.map": "/tasty-treats/static/js/966.cdbc3cfa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3964b643.css",
-    "static/js/main.cf66fc96.js"
+    "static/css/main.21a55da4.css",
+    "static/js/main.2c8a59a1.js"
   ]
 }
