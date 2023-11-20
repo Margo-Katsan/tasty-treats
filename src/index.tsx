@@ -11,7 +11,7 @@ import './index.css';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/tasty-treats">
+    <BrowserRouter basename="/tasty-treats/">
       <Provider store={store}>
         <PersistGate loading={<Loader />} persistor={persistor}>
           <App />
