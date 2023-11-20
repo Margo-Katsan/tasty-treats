@@ -8,9 +8,9 @@ import { Loader } from 'components/Loader/Loader';
 import { store, persistor } from "./redux/store";
 import './index.css';
 
-// @ts-expect-error TS(2345): Argument of type 'HTMLElement | null' is not assig... Remove this comment to see the full error message
-ReactDOM.createRoot(document.getElementById('root')).render(
-
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+root.render(
+  <React.StrictMode>
     <BrowserRouter basename="/tasty-treats">
       <Provider store={store}>
         <PersistGate loading={<Loader />} persistor={persistor}>
@@ -18,5 +18,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </PersistGate>
       </Provider>
     </BrowserRouter>
-
+  </React.StrictMode>
 );

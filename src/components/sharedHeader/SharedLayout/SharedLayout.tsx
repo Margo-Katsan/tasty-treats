@@ -1,11 +1,23 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import { Outlet } from "react-router-dom";
 import { Header } from "components/sharedHeader/Header/Header"
 import { Loader } from "components/Loader/Loader";
+import { useModal } from "hooks/useModal";
+import { Modal } from "components/modals/Modal/Modal"
+import { RecipesDetails } from "components/modals/RecipeDetails/RecipeDetails";
 import css from "./SharedLayout.module.css"
 
 export const SharedLayout = () => {
+  const { showModal, handleOpenModal, handleCloseModal, searchParams } = useModal();
+
+  useEffect(() => {
+    if (searchParams.get('id')) {
+      handleOpenModal(searchParams.get('id') as string);
+    }
+    // eslint-disable-next-line
+  }, [])
+
   return (
     <>
       <Header/>
@@ -14,6 +26,11 @@ export const SharedLayout = () => {
         <Outlet />
         </Suspense>
         <ToastContainer />
+        {showModal && (
+          <Modal onClose={handleCloseModal}>
+            <RecipesDetails />
+          </Modal>
+      )}
       </main>
     </>
   );
