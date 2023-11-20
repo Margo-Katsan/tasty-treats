@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import { Pagination } from 'swiper/modules';
 import { SliderCookItem } from '../SliderCookItem/SliderCookItem';
 import { SliderTopicInfoItem } from '../SliderTopicInfoItem/SliderTopicInfoItem';

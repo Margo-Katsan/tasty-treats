@@ -6,6 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { App } from 'components/App';
 import { Loader } from 'components/Loader/Loader';
 import { store, persistor } from "./redux/store";
+import 'swiper/css';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)

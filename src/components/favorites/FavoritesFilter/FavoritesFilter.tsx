@@ -1,7 +1,6 @@
 import { ChangeEvent } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import { selectFavoritesCategories, selectFavoritesCategory } from "redux/selectors";
 import { setFavoritesCategory } from "redux/favoritesSlice";
 import { FilterItem } from "../FilterItem/FilterItem";

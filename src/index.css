@@ -174,9 +174,6 @@ html,
 body {
   overflow-x: hidden;
 }
-.swiper-slide {
-  display: flex;
-}
 .swiper-pagination {
   position: absolute;
   text-align: center;
