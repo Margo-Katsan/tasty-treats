@@ -9,7 +9,7 @@ export const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
+        <Route path="" element={<SharedLayout />}>
           <Route index element={<Home />}></Route>
           <Route path="favorites" element={<Favorites />}></Route>
         </Route>
