@@ -3,17 +3,23 @@ import { useEffect, useState } from "react";
 const isDarkTheme = window && window.matchMedia('(prefers-color-scheme: dark)').matches;
 const defaultTheme = isDarkTheme ? 'dark' : 'light';
 
-export const useTheme = () => {
-  const [theme, setTheme] = useState(localStorage.getItem('app-theme') || defaultTheme);
+interface IUseTheme {
+  toggleChangeTheme: (isDark: boolean) => void;
+}
+
+export const useTheme = (): IUseTheme => {
+
+  const [theme, setTheme] = useState<string>(localStorage.getItem('app-theme') || defaultTheme);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('app-theme', theme);
   }, [theme]);
 
-  const toggleChangeTheme = (isDark: any) => {
+  const toggleChangeTheme = (isDark: boolean) => {
     setTheme(isDark ? 'dark' : 'light');
   };
 
   return { toggleChangeTheme };
+  
 };

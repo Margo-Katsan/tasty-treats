@@ -1,9 +1,10 @@
+import { MobileMenu } from "components/modals/MobileMenu/MobileMenu";
 import { useModal } from "hooks/useModal";
 import svg from "images/sprite.svg";
-import { MobileMenu } from "components/modals/MobileMenu/MobileMenu";
 import css from "./BurgerMenu.module.css"
 
 export const BurgerMenu = () => {
+  
   const { showModal, openModal, closeModal } = useModal();
 
   return (

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, FC } from "react";
 import { useExistingSearchParams } from "hooks/useExistingSearchParams";
 import { Select } from "../Select/Select";
 import { LabelName } from "../LabelName/LabelName";
@@ -6,17 +6,20 @@ import { fetchAreas } from "api";
 import { IOption } from "interface/Option";
 import css from './AreaLabel.module.css'
 
-export const AreaLabel = ({
-  optionStyles
-}: any) => {
+interface IAreaLabelProps {
+  optionStyles: string;
+}
+
+export const AreaLabel: FC<IAreaLabelProps> = ({ optionStyles }) => {
+  
   const [areas, setAreas] = useState<IOption[]>([]);
+
   const { updatingSearchParams } = useExistingSearchParams();
 
   useEffect(() => {
     async function fetchingAreas() {
       try {
         const fetchedAreas = await fetchAreas();
-
         const options = fetchedAreas.map((area) => {return {value: area.name, label: area.name, className: optionStyles}});
         setAreas(options)
       } catch (error) {

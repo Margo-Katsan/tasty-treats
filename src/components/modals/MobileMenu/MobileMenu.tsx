@@ -1,14 +1,16 @@
+import { FC } from "react";
 import { NavLink } from "react-router-dom";
 import { Transition } from 'react-transition-group';
 import { ThemeSwitcher } from "components/sharedHeader/ThemeSwitcher/ThemeSwitcher";
 import svg from "images/sprite.svg"
 import css from "./MobileMenu.module.css"
 
-export const MobileMenu = ({
-  isOpen,
-  onClose
-}: any) => {
+interface IMobileMenuProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
+export const MobileMenu: FC<IMobileMenuProps> = ({ isOpen, onClose }) => {
   return (
     <Transition in={isOpen} timeout={300}>
       {(state) => (
@@ -24,8 +26,7 @@ export const MobileMenu = ({
                 <li className={css.item}>
                   <NavLink to="/" className={css.link}>Home</NavLink>
                 </li>
-                {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
-                <li class="nav-item">
+                <li className={css.item}>
                   <NavLink to="/favorites" className={css.link}>Favorites</NavLink>
                 </li>
               </ul>
@@ -35,8 +36,5 @@ export const MobileMenu = ({
         </div>
       )}
     </Transition>
-    
-    
-      
-    )
+  )
 }

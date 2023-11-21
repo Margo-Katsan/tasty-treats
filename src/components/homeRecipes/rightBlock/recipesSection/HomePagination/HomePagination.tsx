@@ -4,7 +4,9 @@ import { selectTotalRecipesPages } from "redux/selectors";
 import { Pagination } from 'components/sharedPagination/Pagination/Pagination';
 
 export const HomePagination = () => {
+
   const totalRecipesPages = useSelector(selectTotalRecipesPages);
+  
   const { updatingSearchParams } = useExistingSearchParams();
 
   const onPageClick = (selectedPage: number) => {

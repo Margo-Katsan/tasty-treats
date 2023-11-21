@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, FC } from "react";
 import { useExistingSearchParams } from "hooks/useExistingSearchParams";
 import { fetchIngredients } from "api";
 import { Select } from "../Select/Select";
@@ -6,10 +6,11 @@ import { LabelName } from "../LabelName/LabelName";
 import { IOption } from "interface/Option";
 import css from "./IngredientsLabel.module.css"
 
-export const IngredientsLabel = ({
-  onReset,
-  optionStyles
-}: any) => {
+interface IIngredientsLabelProps {
+  optionStyles: string
+}
+
+export const IngredientsLabel: FC<IIngredientsLabelProps> = ({optionStyles}) => {
   const { updatingSearchParams } = useExistingSearchParams();
   const [ingredients, setIngredients] = useState<IOption[]>([]);
 

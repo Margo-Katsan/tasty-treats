@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FC } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
@@ -8,12 +8,16 @@ import { useNotify } from 'hooks/useNotify';
 import svg from "images/sprite.svg";
 import css from "./ModalGiveARating.module.css";
 
+interface IModalGiveARatingProps {
+  handleCloseModal: () => void;
+}
+
 const schema = Yup.object().shape({
   rate: Yup.number().required(),
   email: Yup.string().required().email(),
 });
 
-export const ModalGiveARating = () => {
+export const ModalGiveARating: FC<IModalGiveARatingProps> = ({handleCloseModal}) => {
   const [searchParams] = useSearchParams();
   const recipeId = searchParams.get('id');
   const { notifySuccess, notifyError } = useNotify();
@@ -38,8 +42,7 @@ export const ModalGiveARating = () => {
             const respStatus = await patchRating(recipeId as string, values);
             if (respStatus === 200) {
               notifySuccess("Thank you for sharing your rating with us!")
-              actions.resetForm();
-              setValue(0);
+              handleCloseModal();
             }
           }
           catch (error: any) {

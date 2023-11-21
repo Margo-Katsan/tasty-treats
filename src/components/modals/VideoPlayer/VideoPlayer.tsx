@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, FC } from "react";
 import ReactPlayer from 'react-player';
 import { FiYoutube } from 'react-icons/fi';
 import css from './VideoPlayer.module.css';
 
-export const VideoPlayer = ({
-  video,
-  preview
-}: any) => {
+interface IVideoPlayerProps {
+  video: string;
+  preview: string;
+}
+
+export const VideoPlayer: FC<IVideoPlayerProps> = ({ video, preview }) => {
+  
   const [playing, setPlaying] = useState(false);
 
   return (

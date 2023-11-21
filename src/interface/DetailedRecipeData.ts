@@ -1,6 +1,6 @@
 export interface IIngredientDetailedRecipeData {
   desc: string
-  id: string
+  _id: string
   img: string
   measure: string
   name: string

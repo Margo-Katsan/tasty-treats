@@ -17,7 +17,7 @@ export const AddToFavoritesBtn: FC<IAddToFavoritesBtnProps> = ({recipeData}) => 
   return (
     <>
       {!isFavorite ? (
-        <button onClick={() => { handleToggleFavorites(recipeData); notifySuccess('The recipe added to favorites') }} type="button" className={`${css.btn}`}>Add to favorite</button>
+        <button onClick={() => { handleToggleFavorites(recipeData); notifySuccess('The recipe added to favorites') }} type="button" className={`${css.btn}`}>Add to favorites</button>
       ): (
         <button onClick={() => { handleToggleFavorites(recipeData); notifySuccess('The recipe removed from favorites')}} type="button" className={`${css.btn} ${css.removeBtn}`}>Remove from favorites</button>
       )}

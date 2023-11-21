@@ -1,5 +1,6 @@
 import svg from 'images/sprite.svg'
 import css from './FilterReset.module.css';
+
 export const FilterReset = () => {
   return (
     <button className={css.btn} type="reset">

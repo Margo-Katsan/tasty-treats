@@ -1,19 +1,25 @@
- import { toast } from 'react-toastify';
+import { toast, ToastOptions, ToastPosition } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
+
+interface IUseNotify {
+  notifySuccess: (message: string) => void;
+  notifyError: (mesage: string) => void;
+}
   
-export const useNotify = () => {
-  const notifySuccess = (message: string) => toast.success(message, {
-position: "top-center",
-autoClose: 2000,
-hideProgressBar: true,
-closeOnClick: true,
-  });
-  const notifyError = (message: string) => toast.error(message, {
-position: "top-center",
-autoClose: 2000,
-hideProgressBar: true,
-closeOnClick: true,
-  });
+export const useNotify = (): IUseNotify => {
+
+  const options: ToastOptions = {
+    position: "top-center" as ToastPosition,
+    autoClose: 2000,
+    hideProgressBar: true,
+    closeOnClick: true,
+  }
+
+  const notifySuccess = (message: string) => toast.success(message, options);
+
+  const notifyError = (message: string) => toast.error(message, options);
+  
   return { notifySuccess, notifyError }
 
 }

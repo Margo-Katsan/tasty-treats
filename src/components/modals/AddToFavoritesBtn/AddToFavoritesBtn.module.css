@@ -1,7 +1,8 @@
 .btn {
   width: 148px;
   height: 41px;
-  padding: 12px 24px;
+  padding-left: 12px;
+  padding-right: 12px;
   border: 0;
   margin-right: 14px;
 
@@ -15,20 +16,11 @@
 }
 .removeBtn {
   background-color: darkred;
-  padding: 0;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 @media screen and (min-width: 768px) {
   .btn {
     width: 156px;
     height: 45px;
-    padding: 12px 28px;
-  }
-  .removeBtn {
-    padding: 0;
-    padding-left: 12px;
-    padding-right: 12px;
   }
 }
 @media screen and (min-width: 1200px) {

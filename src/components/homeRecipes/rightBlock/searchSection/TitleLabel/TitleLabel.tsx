@@ -1,5 +1,5 @@
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'loda... Remove this comment to see the full error message
-import _ from 'lodash';
+import {ChangeEvent} from "react"
+import * as _ from "lodash";
 import { useSearchParams } from 'react-router-dom';
 import { useExistingSearchParams } from "hooks/useExistingSearchParams";
 import { LabelName } from "../LabelName/LabelName";
@@ -9,10 +9,11 @@ import css from "./TitleLabel.module.css"
 export const TitleLabel = () => {
   const [searchParams] = useSearchParams();
   const { updatingSearchParams } = useExistingSearchParams();
+
   const handleInputText = _.debounce(
-    (e: any) => {
+    (e: ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
-      updatingSearchParams('title', e.target.value)
+      updatingSearchParams('title', e.target.value.trim())
     },
     300,
     { leading: false, trailing: true }

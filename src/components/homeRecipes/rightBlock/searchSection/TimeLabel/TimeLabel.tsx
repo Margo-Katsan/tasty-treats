@@ -1,12 +1,14 @@
+import { FC } from "react";
 import { useExistingSearchParams } from 'hooks/useExistingSearchParams';
 import { Select } from '../Select/Select';
 import { LabelName } from '../LabelName/LabelName';
 import css from './TimeLabel.module.css';
 
-export const TimeLabel = ({
-  optionStyles
-}: any) => {
+interface ITimeLabel {
+  optionStyles: string;
+}
 
+export const TimeLabel: FC<ITimeLabel> = ({ optionStyles }) => {
 
   const { updatingSearchParams } = useExistingSearchParams();
 

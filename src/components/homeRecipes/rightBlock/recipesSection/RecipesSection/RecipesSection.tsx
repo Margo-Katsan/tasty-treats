@@ -1,13 +1,11 @@
-import { HomePagination } from "../HomePagination/HomePagination";
-import { RecipesList } from "../RecipesList/RecipesList";
-import { selectIsLoading, selectTotalRecipesPages, selectTotalRecipes } from "redux/selectors";
-import { Loader } from "components/Loader/Loader";
-import css from "./RecipesSection.module.css"
+import { useEffect, useState, } from 'react';
 import { useSelector } from "react-redux";
 import { useWindowSize } from "@uidotdev/usehooks";
-import { useEffect, useState, } from 'react';
+import { HomePagination } from "../HomePagination/HomePagination";
 import { NoRecipesFound } from "../NoRecipesFound/NoRecipesFound";
-
+import { RecipesList } from "../RecipesList/RecipesList";import { Loader } from "components/Loader/Loader";
+import { selectIsLoading, selectTotalRecipesPages, selectTotalRecipes } from "redux/selectors";
+import css from "./RecipesSection.module.css"
 
 export const RecipesSection = () => {
   const initialPerPage = () => {

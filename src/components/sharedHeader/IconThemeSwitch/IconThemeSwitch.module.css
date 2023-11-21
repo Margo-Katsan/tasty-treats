@@ -1,0 +1,17 @@
+.uncheckedIcon {
+  position: absolute;
+  left: -18.4px;
+
+  width: 46px;
+  height: 100%;
+
+  border-radius: 10px;
+  box-shadow: 7px 5px 15px 0px rgba(160, 158, 160, 0.6);
+}
+.checkedHandleIcon {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  box-shadow: 4px 4px 15px 0px rgba(243, 243, 243, 0.25);
+}

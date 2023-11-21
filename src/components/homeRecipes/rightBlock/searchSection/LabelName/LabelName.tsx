@@ -1,8 +1,11 @@
+import {FC} from "react"
 import css from './LabelName.module.css';
 
-export const LabelName = ({
-  name
-}: any) => {
+interface ILabelNameProps {
+  name: string
+}
+
+export const LabelName: FC<ILabelNameProps> = ({ name }) => {
   return (
     <span className={css.title}>{name}</span>
  )

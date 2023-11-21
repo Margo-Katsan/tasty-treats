@@ -5,7 +5,13 @@ import { toggleFavorites } from "redux/favoritesSlice";
 import { IDetailedRecipeData } from "interface/DetailedRecipeData";
 import { useState, useEffect } from "react";
 
-export const useUpdateFavorites = (recipeData: IDetailedRecipeData) => {
+interface IUseUpdateFavorites {
+  isFavorite: boolean;
+  handleToggleFavorites: (recipeData: IDetailedRecipeData) => void;
+}
+
+export const useUpdateFavorites = (recipeData: IDetailedRecipeData): IUseUpdateFavorites => {
+
   const dispatch = useDispatch();
 
   const favorites = useSelector(selectFavorites);
