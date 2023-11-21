@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/tasty-treats/static/css/main.5dd7d721.css",
-    "main.js": "/tasty-treats/static/js/main.75deab09.js",
-    "static/css/357.f9022776.chunk.css": "/tasty-treats/static/css/357.f9022776.chunk.css",
-    "static/js/357.6da2a500.chunk.js": "/tasty-treats/static/js/357.6da2a500.chunk.js",
+    "main.css": "/tasty-treats/static/css/main.38e3c273.css",
+    "main.js": "/tasty-treats/static/js/main.b72e4bb1.js",
+    "static/css/357.8ee42a4a.chunk.css": "/tasty-treats/static/css/357.8ee42a4a.chunk.css",
+    "static/js/357.0fcfb447.chunk.js": "/tasty-treats/static/js/357.0fcfb447.chunk.js",
     "static/css/925.6b2fa16d.chunk.css": "/tasty-treats/static/css/925.6b2fa16d.chunk.css",
     "static/js/925.50585a07.chunk.js": "/tasty-treats/static/js/925.50585a07.chunk.js",
     "static/js/744.73998003.chunk.js": "/tasty-treats/static/js/744.73998003.chunk.js",
@@ -20,17 +20,17 @@
     "static/media/Inter-Regular.woff": "/tasty-treats/static/media/Inter-Regular.98692f75124061fa1ba1.woff",
     "static/media/sprite.svg": "/tasty-treats/static/media/sprite.98b36a98e3ccf30602c9c0707a9010b3.svg",
     "index.html": "/tasty-treats/index.html",
-    "main.5dd7d721.css.map": "/tasty-treats/static/css/main.5dd7d721.css.map",
-    "main.75deab09.js.map": "/tasty-treats/static/js/main.75deab09.js.map",
-    "357.f9022776.chunk.css.map": "/tasty-treats/static/css/357.f9022776.chunk.css.map",
-    "357.6da2a500.chunk.js.map": "/tasty-treats/static/js/357.6da2a500.chunk.js.map",
+    "main.38e3c273.css.map": "/tasty-treats/static/css/main.38e3c273.css.map",
+    "main.b72e4bb1.js.map": "/tasty-treats/static/js/main.b72e4bb1.js.map",
+    "357.8ee42a4a.chunk.css.map": "/tasty-treats/static/css/357.8ee42a4a.chunk.css.map",
+    "357.0fcfb447.chunk.js.map": "/tasty-treats/static/js/357.0fcfb447.chunk.js.map",
     "925.6b2fa16d.chunk.css.map": "/tasty-treats/static/css/925.6b2fa16d.chunk.css.map",
     "925.50585a07.chunk.js.map": "/tasty-treats/static/js/925.50585a07.chunk.js.map",
     "744.73998003.chunk.js.map": "/tasty-treats/static/js/744.73998003.chunk.js.map",
     "966.cdbc3cfa.chunk.js.map": "/tasty-treats/static/js/966.cdbc3cfa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5dd7d721.css",
-    "static/js/main.75deab09.js"
+    "static/css/main.38e3c273.css",
+    "static/js/main.b72e4bb1.js"
   ]
 }
